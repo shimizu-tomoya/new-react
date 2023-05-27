@@ -5,7 +5,7 @@ import { Main } from 'src/components/Main'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function About(props) {
-  const { count, isShow, handleClick, handleDisplay,text, array, handleChange , handleAdd } = props;
+  const { isShow, handleClick ,doubleCount,handleDisplay,text, array, handleChange , handleAdd } = props;
 
   return (
     <>
@@ -14,8 +14,7 @@ export default function About(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* ここに注目 */}
-      {isShow ? <h1>{count}</h1> : null}
+      {isShow ? <h1>{doubleCount}</h1> : null}
       <button
         onClick={handleClick}>
         ボタン
