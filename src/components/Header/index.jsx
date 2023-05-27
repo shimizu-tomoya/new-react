@@ -3,8 +3,12 @@ import { Inter } from 'next/font/google'
 import styles from 'src/components/Header/Header.module.css'
 import Link from 'next/link'
 
-
 const inter = Inter({ subsets: ['latin'] })
+
+const NAV_ITEMS = [
+  {href:"/",label:"Index"},
+  {href:"/about",label:"About"}
+];
 
 export function Header({page}) {
   return (
@@ -14,12 +18,13 @@ export function Header({page}) {
             <code className={styles.code}>pages/{page}.js</code>
       </p>
       <div className={styles.link}>
-        <Link href="/">
-          index.js
-        </Link>
-        <Link href="/about">
-          about.js
-        </Link>
+        {NAV_ITEMS.map((item) => {
+          return (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          );
+        })}
       </div>
       <div>
         <a

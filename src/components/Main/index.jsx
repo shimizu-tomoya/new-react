@@ -9,14 +9,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export function Main({ page }) {
 
-  useEffect(() => {
-    document.body.style.backgroundColor = 'lightblue';
-
-    return () => {
-      document.body.style.backgroundColor = '';
-    };
-  }, []);
-
   return (
       <main className={`${styles.main} ${inter.className}`}>
       <Header page={page} />

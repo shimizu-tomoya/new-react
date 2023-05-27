@@ -10,7 +10,8 @@ export const useInputArray = () => {
 
   const handleAdd = useCallback(() => {
     setArray((array) => {
-      if (array.some((item) => item === text)) {
+      // if (array.some((item) => item === text)) {
+      if (array.includes(text)) {
         alert("既に存在しています");
         return array;
       }
